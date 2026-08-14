@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import { User, AuditLog } from "@/lib/models";
-import { generateToken } from "@/lib/auth";
+import { signToken } from "@/lib/auth";
 
 export async function GET(req: Request) {
   try {
@@ -17,7 +17,7 @@ export async function GET(req: Request) {
     }
 
     // Generate JWT token
-    const token = generateToken({
+    const token = signToken({
       userId: user._id.toString(),
       email: user.email,
       name: user.name,
