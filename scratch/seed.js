@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const MONGODB_URI = "mongodb://127.0.0.1:27017/devfusion-ats";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/devfusion-ats";
 
 // Schema Definitions
 const CompanySchema = new mongoose.Schema({
