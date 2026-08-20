@@ -4,6 +4,8 @@ import { connectDB } from "@/lib/db";
 import { Notification } from "@/lib/models";
 import DashboardShellClient from "./DashboardShellClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function DashboardLayout({
   children,
 }: {
